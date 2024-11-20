@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="reset" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8df9947036.js" crossorigin="anonymous"></script>
+    <style>
+        .skip-link {
+            position: absolute;
+            top: 0;
+            left: -10000px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-box">My Favorite Pieces of Media</h1>
+
+        <a href="#main" class="skip-link">Skip to Main Content</a>
+
+        <nav>
+            <button class="styled-button" onclick="window.location.href='books.html';">
+                <i class="fa-solid fa-book"></i>
+                Books
+            </button>
+            <button class="styled-button" onclick="window.location.href='movies.html';">
+                <i class="fa-solid fa-film"></i>
+                Movies
+            </button>
+            <button class="styled-button" onclick="window.location.href='shows.html';">
+                <i class="fa-solid fa-tv"></i>
+                Shows
+            </button>
+            <button class="styled-button" onclick="window.location.href='music.html';">
+                <i class="fa-solid fa-music"></i>
+                Music
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="text-box">Welcome!</h2>
+        <p class="text-box">
+            Hi there! My name is Kaaviya. Welcome to my website. On here I will share some of my
+            favorite pieces of media and a small summary of it. Above are buttons that will take you to the following
+            media. Ofr example, if you click on the books button, it'll take you to the page that holds a list of my
+            favorite books. Thank you stopping by and I hope you like my lists!
+        </p>
+    </main>
+
+
+    <footer>
+        <h3>Thanks for visiting!</h3>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+/* Global body styles */
+body {
+    margin: 0;
+    /* Remove default margin */
+    height: 100vh;
+    /* Set body height to fill the viewport */
+    display: flex;
+    /* Ensures proper alignment */
+    flex-direction: column;
+    /* Stacks elements vertically */
+    justify-content: flex-start;
+    /* Aligns content to the top */
+    background-image: url("../images/lake-6260668_1920.png");
+    background-size: auto 100vh;
+    /* Image height matches the viewport height */
+    background-repeat: no-repeat;
+    /* Prevent tiling */
+    background-position: center;
+    /* Centers the image */
+}
+
+.text-box {
+    background-color: rgba(182, 182, 182, 0.5);
+    /* Semi-transparent black background */
+    padding: 15px 25px;
+    /* Adds space around the text */
+    border-radius: 15px;
+    /* Rounds the corners */
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(182, 182, 182, 0.3);
+    /* Optional: Adds a shadow for better visibility */
+    backdrop-filter: blur(5px);
+    /* Optional: Adds a subtle blur effect */
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Header H1 styles */
+header h1 {
+    color: #233b27;
+}
+
+
+header nav {
+    .styled-button {
+        background-color: #596566;
+        /* Green background */
+        color: #233b27;
+        /* White text */
+        border: none;
+        /* Remove border */
+        padding: 10px 20px;
+        /* Add padding */
+        text-align: center;
+        /* Center the text */
+        font-size: 16px;
+        /* Set font size */
+        border-radius: 5px;
+        /* Rounded corners */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        transition: background-color 0.3s ease;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        /* Smooth hover transition */
+    }
+
+    /* Hover Effect */
+    .styled-button:hover {
+        background-color: #45a049;
+        /* Darker green on hover */
+    }
+
+    /* Focus Effect */
+    .styled-button:focus {
+        outline: none;
+        /* Remove default focus outline */
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        /* Add focus glow */
+    }
+
+}
+
+/* Main content styles */
+main {
+    text-align: left;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Main H2 styles */
+main h2 {
+    color: #2b4930;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Main paragraph styles */
+main p {
+    color: #355e3b;
+    margin-top: 0px;
+}
+
+/* Footer styles */
+footer {
+    position: relative;
+    /* Adjust to stay in document flow */
+    bottom: 0;
+    height: 4rem;
+    background-color: #000000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Footer H3 styles */
+footer h3 {
+    color: #fff5e1;
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000d27;
+        background-image: url("../images/planet-1702788_1920.jpg");
+    }
+
+    header h1 {
+        color: #b6c2cf;
+    }
+
+    header nav {
+        .styled-button {
+            background-color: rgba(89, 101, 102, 0.75);
+            color: #fefaf4;
+        }
+
+        .styled-button:hover {
+            background-color: #fefaf4;
+            color: #596566;
+        }
+
+        /* Focus Effect */
+        .styled-button:focus {
+            background-color: #fefaf4;
+            color: #596566;
+            box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    /* Main H2 styles */
+    main h2 {
+        color: #afbfcf;
+    }
+
+    /* Main paragraph styles */
+    main p {
+        color: #afbfcf;
+    }
+
+    .text-box {
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+
+}
+
+@media (prefers-contrast: more) {
+    body {
+        background-color: #cbd0d3;
+        background-image: url("../images/forest-7774205_1920.jpg");
+    }
+
+    header h1 {
+        color: #b6c2cf;
+    }
+
+    /* Main H2 styles */
+    main h2 {
+        color: #afbfcf;
+    }
+
+    /* Main paragraph styles */
+    main p {
+        color: #afbfcf;
+    }
+
+    .text-box {
+        background-color: rgba(203, 208, 211, 0.5);
+        box-shadow: 0 4px 6px rgba(139, 142, 143, 0.3);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #131419;
+            background-image: url("../images/background-1939128_1280.jpg");
+        }
+
+        header h1 {
+            color: #e7eaee;
+        }
+
+        /* Main H2 styles */
+        main h2 {
+            color: #e7eaee;
+        }
+
+        /* Main paragraph styles */
+        main p {
+            color: #e7eaee;
+        }
+
+        .text-box {
+            background-color: rgba(19, 20, 25, 0.5);
+            box-shadow: 0 4px 6px rgba(3, 3, 3, 0.3);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {}
+
+}
