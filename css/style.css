@@ -1,3 +1,17 @@
+head .skip-link {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+
+head .skip-link:focus {
+    left: 10px;
+}
+
 /* Global body styles */
 body {
     margin: 0;
@@ -11,16 +25,19 @@ body {
     justify-content: flex-start;
     /* Aligns content to the top */
     background-image: url("../images/lake-6260668_1920.png");
-    background-size: auto 100vh;
-    /* Image height matches the viewport height */
+    background-size: cover;
+    /* Ensure the image covers the entire viewport */
     background-repeat: no-repeat;
     /* Prevent tiling */
     background-position: center;
-    /* Centers the image */
+    /* Center the image */
+    background-attachment: fixed;
+    /* Make the background stationary */
 }
 
+
 .text-box {
-    background-color: rgba(182, 182, 182, 0.5);
+    background-color: rgba(250, 252, 255, 0.5);
     /* Semi-transparent black background */
     padding: 15px 25px;
     /* Adds space around the text */
@@ -48,12 +65,11 @@ header h1 {
     color: #233b27;
 }
 
-
 header nav {
     .styled-button {
-        background-color: #596566;
+        background-color: #D1EBFF;
         /* Green background */
-        color: #233b27;
+        color: #1a6d9d;
         /* White text */
         border: none;
         /* Remove border */
@@ -75,39 +91,126 @@ header nav {
 
     /* Hover Effect */
     .styled-button:hover {
-        background-color: #45a049;
+        background-color: #1a6d9d;
+        color: #D1EBFF;
         /* Darker green on hover */
     }
 
     /* Focus Effect */
     .styled-button:focus {
         outline: none;
+        background-color: #1a6d9d;
+        color: #D1EBFF;
         /* Remove default focus outline */
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
         /* Add focus glow */
     }
+}
 
+/* header h2 styles */
+header h2 {
+    color: #2b4930;
+    text-align: left;
+    /* Changed from center to left */
+    margin-bottom: 10px;
+}
+
+/* header paragraph styles */
+header p {
+    color: #355e3b;
+    margin-top: 0px;
+    text-align: left;
+    /* Added for left alignment */
 }
 
 /* Main content styles */
 main {
-    text-align: left;
+    align-items: center;
     flex-direction: column;
     flex: 1;
     padding: 20px;
 }
 
-/* Main H2 styles */
-main h2 {
-    color: #2b4930;
-    text-align: center;
-    margin-bottom: 10px;
+main .text-box-media {
+    display: flex;
+    /* Horizontal layout by default */
+    align-items: center;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(250, 252, 255, 0.8);
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
 }
 
-/* Main paragraph styles */
-main p {
+.text-box-media img {
+    width: 50%;
+    /* Default: Image takes half the container */
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.text-box-media div {
+    width: 50%;
+    /* Default: Text takes half the container */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.text-box-media h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #233b27;
+}
+
+.text-box-media p {
+    margin: 0;
+    font-size: 1rem;
     color: #355e3b;
-    margin-top: 0px;
+}
+
+
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#scrollTopBtn:focus {
+    outline: 2px solid #fff;
+}
+
+#scrollTopBtn:hover {
+    background-color: #333;
+}
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    left: 10px;
 }
 
 /* Footer styles */
@@ -128,6 +231,198 @@ footer h3 {
     color: #fff5e1;
 }
 
+/* Styles for screens smaller than 768px (e.g., tablets) */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+        /* Slightly larger base font size */
+        margin: 10px;
+    }
+
+    .text-box {
+        padding: 12px 15px;
+        font-size: 16px;
+        /* Larger font size for text box content */
+    }
+
+    header h1 {
+        font-size: 80px;
+        /* Significantly larger font size for the main heading */
+    }
+
+    header h2 {
+        font-size: 60px;
+        /* Larger font size for subheadings */
+        color: #2b4930;
+        text-align: left;
+        /* Changed from center to left */
+        margin-bottom: 15px;
+    }
+
+    header p {
+        font-size: 20px;
+        /* Larger font size for paragraph text */
+        color: #355e3b;
+        margin-top: 0;
+        line-height: 1.6;
+        /* Increase line spacing for better readability */
+        text-align: left;
+        /* Changed from center to left */
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    header nav .styled-button {
+        font-size: 20px;
+        /* Maintain larger button font size */
+        padding: 18px 35px;
+        width: 48%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .text-box-media {
+        flex-direction: row;
+        /* Maintain horizontal layout */
+    }
+
+    .text-box-media img {
+        width: auto;
+        /* Image stays the same size */
+        flex-shrink: 0;
+        /* Prevent shrinking of the image */
+    }
+
+    .text-box-media div {
+        width: 100%;
+        /* Text spans full width */
+        padding: 15px;
+        text-align: center;
+        /* Optional: Center-align for better readability */
+    }
+
+    footer {
+        width: 100%;
+        /* Full-width footer */
+        height: 5rem;
+        /* Taller footer */
+        background-color: #000000;
+        text-align: center;
+        position: relative;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        /* Larger font size for footer text */
+        color: white;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+        /* Slightly larger base font size */
+        margin: 10px;
+    }
+
+    .text-box {
+        padding: 12px 15px;
+        font-size: 16px;
+        /* Larger font size for text box content */
+    }
+
+    header h1 {
+        font-size: 80px;
+        /* Significantly larger font size for the main heading */
+    }
+
+    header h2 {
+        font-size: 60px;
+        /* Larger font size for subheadings */
+        color: #2b4930;
+        text-align: left;
+        /* Changed from center to left */
+        margin-bottom: 15px;
+    }
+
+    header p {
+        font-size: 20px;
+        /* Larger font size for paragraph text */
+        color: #355e3b;
+        margin-top: 0;
+        line-height: 1.6;
+        /* Increase line spacing for better readability */
+        text-align: left;
+        /* Changed from center to left */
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    header nav .styled-button {
+        font-size: 20px;
+        /* Maintain larger button font size */
+        padding: 18px 35px;
+        width: 48%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .text-box-media {
+        flex-direction: column;
+        /* Stack vertically */
+    }
+
+    .text-box-media img {
+        width: 100%;
+        /* Image spans full width */
+        height: auto;
+        border-radius: 15px 15px 0 0;
+        /* Adjust for vertical stacking */
+    }
+
+    .text-box-media div {
+        width: 100%;
+        /* Text spans full width */
+        padding: 15px;
+    }
+
+    .text-box-media h3,
+    .text-box-media p {
+        text-align: center;
+        /* Optional: Center-align for smaller screens */
+    }
+
+    footer {
+        width: 100%;
+        /* Full-width footer */
+        height: 5rem;
+        /* Taller footer */
+        background-color: #000000;
+        text-align: center;
+        position: relative;
+    }
+
+    footer h3 {
+        font-size: 18px;
+        /* Larger font size for footer text */
+        color: white;
+    }
+}
+
 /* Media query for dark mode */
 @media (prefers-color-scheme: dark) {
     body {
@@ -139,94 +434,47 @@ footer h3 {
         color: #b6c2cf;
     }
 
-    header nav {
-        .styled-button {
-            background-color: rgba(89, 101, 102, 0.75);
-            color: #fefaf4;
-        }
-
-        .styled-button:hover {
-            background-color: #fefaf4;
-            color: #596566;
-        }
-
-        /* Focus Effect */
-        .styled-button:focus {
-            background-color: #fefaf4;
-            color: #596566;
-            box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
-        }
+    /* Hover Effect */
+    header nav .styled-button {
+        background-color: #596566;
+        color: #fefaf4;
     }
 
-    /* Main H2 styles */
-    main h2 {
-        color: #afbfcf;
+    header nav .styled-button:hover {
+        background-color: #fefaf4;
+        color: #596566;
     }
 
-    /* Main paragraph styles */
-    main p {
+    /* Focus Effect */
+    header nav .styled-button:focus {
+        background-color: #fefaf4;
+        color: #596566;
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* header h2 styles */
+    header h2 {
         color: #afbfcf;
+        text-align: left;
+        /* Changed to left */
+    }
+
+    /* header paragraph styles */
+    header p {
+        color: #afbfcf;
+        text-align: left;
+        /* Changed to left */
     }
 
     .text-box {
         background-color: rgba(0, 0, 0, 0.5);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
-
-
 }
 
 @media (prefers-contrast: more) {
     body {
         background-color: #cbd0d3;
-        background-image: url("../images/forest-7774205_1920.jpg");
+        background-image: url("../images/contrast-bright-bg.jpg");
     }
-
-    header h1 {
-        color: #b6c2cf;
-    }
-
-    /* Main H2 styles */
-    main h2 {
-        color: #afbfcf;
-    }
-
-    /* Main paragraph styles */
-    main p {
-        color: #afbfcf;
-    }
-
-    .text-box {
-        background-color: rgba(203, 208, 211, 0.5);
-        box-shadow: 0 4px 6px rgba(139, 142, 143, 0.3);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        body {
-            background-color: #131419;
-            background-image: url("../images/background-1939128_1280.jpg");
-        }
-
-        header h1 {
-            color: #e7eaee;
-        }
-
-        /* Main H2 styles */
-        main h2 {
-            color: #e7eaee;
-        }
-
-        /* Main paragraph styles */
-        main p {
-            color: #e7eaee;
-        }
-
-        .text-box {
-            background-color: rgba(19, 20, 25, 0.5);
-            box-shadow: 0 4px 6px rgba(3, 3, 3, 0.3);
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {}
-
 }
