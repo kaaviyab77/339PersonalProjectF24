@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="reset" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8df9947036.js" crossorigin="anonymous"></script>
+    <style>
+        .skip-link {
+            position: absolute;
+            top: 0;
+            left: -10000px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-box">My Favorite Music <i class="fa-solid fa-music"></i></h1>
+
+        <a href="#main" class="skip-link">Skip to Main Content</a>
+
+        <nav>
+            <button class="styled-button" onclick="window.location.href='index.html';">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </button>
+            <button class="styled-button" onclick="window.location.href='books.html';">
+                <i class="fa-solid fa-book"></i>
+                Books
+            </button>
+            <button class="styled-button" onclick="window.location.href='movies.html';">
+                <i class="fa-solid fa-film"></i>
+                Movies
+            </button>
+            <button class="styled-button" onclick="window.location.href='shows.html';">
+                <i class="fa-solid fa-tv"></i>
+                Shows
+            </button>
+        </nav>
+        <h2 class="text-box">Welcome to my favorite music!</h2>
+        <p class="text-box">
+            Here are some of my favorite movies. These movies are movies that I watched recently and very much enjoyed.
+            I recommend watching these movies! I will include a short summary of each movie as well as link to a trailer
+            to each movie.
+        </p>
+    </header>
+
+    <main>
+    </main>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top of the page">
+        <i class="fa-solid fa-arrow-up"></i>
+        Top
+    </button>
+
+    <footer>
+        <h3>Thanks for visiting!</h3>
+    </footer>
+
+    <script src="js/function.js"></script>
+</body>
+
+</html>
