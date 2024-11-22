@@ -1,4 +1,4 @@
-head .skip-link {
+.skip-link {
     position: absolute;
     top: 0;
     left: -10000px;
@@ -8,7 +8,7 @@ head .skip-link {
     z-index: 100;
 }
 
-head .skip-link:focus {
+.skip-link:focus {
     left: 10px;
 }
 
@@ -125,7 +125,12 @@ header p {
 
 /* Main content styles */
 main {
+    display: flex;
+    /* Ensure flexbox is used */
     align-items: center;
+    /* Vertically center items if needed */
+    justify-content: center;
+    /* Horizontally center items */
     flex-direction: column;
     flex: 1;
     padding: 20px;
@@ -174,7 +179,6 @@ main .text-box-media {
     font-size: 1rem;
     color: #355e3b;
 }
-
 
 #scrollTopBtn {
     display: none;
@@ -467,14 +471,176 @@ footer h3 {
     }
 
     .text-box {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 9, 40, 0.5);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
+
+    main .text-box-media {
+        background-color: rgba(0, 9, 40, 0.6);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-box-media h3 {
+        color: #afbfcf;
+        ;
+    }
+
+    .text-box-media p {
+        color: #8694b1;
+    }
+
 }
 
 @media (prefers-contrast: more) {
     body {
-        background-color: #cbd0d3;
-        background-image: url("../images/contrast-bright-bg.jpg");
+        background-color: #dbe0e3;
+        background-image: url("../images/forest-7774205_1920.jpg");
+    }
+
+    header h1 {
+        color: #000000;
+    }
+
+    /* Hover Effect */
+    header nav .styled-button {
+        background-color: #000000;
+        color: #fefaf4;
+    }
+
+    header nav .styled-button:hover {
+        background-color: #fefaf4;
+        color: #000000;
+    }
+
+    /* Focus Effect */
+    header nav .styled-button:focus {
+        background-color: #fefaf4;
+        color: #000000;
+        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* header h2 styles */
+    header h2 {
+        color: #000000;
+        text-align: left;
+        /* Changed to left */
+    }
+
+    /* header paragraph styles */
+    header p {
+        color: #000000;
+        text-align: left;
+        /* Changed to left */
+    }
+
+    .text-box {
+        background-color: rgba(219, 224, 227, 0.5);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    main .text-box-media {
+        background-color: rgba(219, 224, 227, 0.6);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-box-media h3 {
+        color: #000000;
+        ;
+    }
+
+    .text-box-media p {
+        color: #000000;
+    }
+
+    #scrollTopBtn {
+        background-color: white;
+        color: black;
+    }
+
+    #scrollTopBtn:focus {
+        outline: 2px solid #000000;
+        color: white;
+    }
+
+    #scrollTopBtn:hover {
+        background-color: #000000;
+        color: white;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #1a191f;
+            background-image: url("../images/background-1939128_1280.jpg");
+        }
+
+        header h1 {
+            color: #fefaf4;
+        }
+
+        /* Hover Effect */
+        header nav .styled-button {
+            background-color: #fefaf4;
+            color: #000000;
+        }
+
+        header nav .styled-button:hover {
+            background-color: #000000;
+            color: #fefaf4;
+        }
+
+        /* Focus Effect */
+        header nav .styled-button:focus {
+            background-color: #000000;
+            color: #fefaf4;
+            box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* header h2 styles */
+        header h2 {
+            color: #fefaf4;
+            text-align: left;
+            /* Changed to left */
+        }
+
+        /* header paragraph styles */
+        header p {
+            color: #fefaf4;
+            text-align: left;
+            /* Changed to left */
+        }
+
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        main .text-box-media {
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-box-media h3 {
+            color: #fefaf4;
+            ;
+        }
+
+        .text-box-media p {
+            color: #fefaf4;
+        }
+
+        #scrollTopBtn {
+            background-color: white;
+            color: black;
+        }
+
+        #scrollTopBtn:focus {
+            outline: 2px solid #000000;
+            color: white;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #000000;
+            color: white;
+        }
     }
 }
