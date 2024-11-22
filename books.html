@@ -8,21 +8,7 @@
     <link rel="reset" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/8df9947036.js" crossorigin="anonymous"></script>
-    <style>
-        .skip-link {
-            position: absolute;
-            top: 0;
-            left: -10000px;
-            background: #000;
-            color: #fff;
-            padding: 8px;
-            z-index: 100;
-        }
 
-        .skip-link:focus {
-            left: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -49,9 +35,7 @@
                 Music
             </button>
         </nav>
-    </header>
 
-    <main>
         <h2 class="text-box">Welcome to my favorite books!</h2>
         <p class="text-box">
             Here are some of my favorite books. This will be a combination of graphic novels to actual novels. These
@@ -59,6 +43,35 @@
             childhood and the books later on will be books that I am currently reading, or am looking forward to
             reading.
         </p>
+
+    </header>
+
+    <main>
+        <div class="text-box-media">
+            <img src="images/froggy-eats-out.jpg" alt="Froggy Eats Out - By Jonathan, Illustrated By Frank Remkiewicz">
+            <div>
+                <h3>Froggy Series - By Jonathan London, Illustrated By Frank Remkiewicz</h3>
+                <p>Paragraph.</p>
+            </div>
+        </div>
+
+        <div class="text-box-media">
+            <img src="images/9780439691413.jpg" alt="Shipwreck On The Pirate Islands - By Geronimo Stilton">
+            <div>
+                <h3>Geronimo Stilton Series - By Geronimo Stilton</h3>
+                <p>Paragraph.</p>
+            </div>
+        </div>
+
+        <div class="text-box-media">
+            <img src="images/91-fE4Scx8L._AC_UF1000,1000_QL80_.jpg" alt="The Lost Hero - By Rick Riordan">
+            <div>
+                <h3>The Lost Hero - By Rick Riordan</h3>
+                <p>Paragraph.</p>
+            </div>
+        </div>
+
+
     </main>
 
     <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top of the page">
