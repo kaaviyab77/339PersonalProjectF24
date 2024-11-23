@@ -66,7 +66,7 @@ header h1 {
 }
 
 header nav {
-    .styled-button {
+    .nav-button {
         background-color: #D1EBFF;
         /* Green background */
         color: #1a6d9d;
@@ -90,14 +90,14 @@ header nav {
     }
 
     /* Hover Effect */
-    .styled-button:hover {
+    .nav-button:hover {
         background-color: #1a6d9d;
         color: #D1EBFF;
         /* Darker green on hover */
     }
 
     /* Focus Effect */
-    .styled-button:focus {
+    .nav-button:focus {
         outline: none;
         background-color: #1a6d9d;
         color: #D1EBFF;
@@ -136,9 +136,66 @@ main {
     padding: 20px;
 }
 
-main .text-box-media {
+/* Lightbox Overlay */
+.lightbox-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* Dark overlay */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lightbox Content */
+.lightbox-content {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    max-width: 800px;
+    /* Increase max width for larger lightbox */
+    width: 90%;
+    /* Keep it responsive to viewport width */
+    padding: 40px;
+    /* Increase padding for a more spacious look */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    /* Slightly stronger shadow */
+    transform: scale(0.8);
+    /* Initial zoom-out */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Close Button */
+/* .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+} */
+
+/* Show Lightbox */
+.lightbox-overlay.active {
     display: flex;
-    /* Horizontal layout by default */
+    /* Show the overlay */
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+    /* Zoom-in animation */
+}
+
+/* Text Box Default Styling */
+.text-box-media {
+    display: flex;
     align-items: center;
     width: 100%;
     border-radius: 15px;
@@ -148,24 +205,35 @@ main .text-box-media {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     max-width: 800px;
+    cursor: pointer;
+    position: relative;
+    /* Indicates the box is clickable */
+}
+
+/* Hover effect for normal text box */
+.text-box-media:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .text-box-media img {
     width: 50%;
-    /* Default: Image takes half the container */
     height: auto;
     object-fit: cover;
     border-radius: 15px 0 0 15px;
+    flex-shrink: 0;
+    /* Prevent image from shrinking */
 }
 
 .text-box-media div {
     width: 50%;
-    /* Default: Text takes half the container */
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    /* Ensure the text aligns properly */
 }
 
 .text-box-media h3 {
@@ -179,6 +247,30 @@ main .text-box-media {
     font-size: 1rem;
     color: #355e3b;
 }
+
+.text-box-media .trailer-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF0000;
+    color: white;
+    border: black 1px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+    /* Ensure the button appears on top */
+}
+
+.text-box-media .trailer-button i {
+    margin-right: 8px;
+}
+
+.text-box-media .trailer-button:hover {
+    background-color: #FF5555;
+}
+
 
 #scrollTopBtn {
     display: none;
@@ -279,7 +371,7 @@ footer h3 {
         justify-content: space-between;
     }
 
-    header nav .styled-button {
+    header nav .nav-button {
         font-size: 20px;
         /* Maintain larger button font size */
         padding: 18px 35px;
@@ -293,23 +385,28 @@ footer h3 {
     }
 
     .text-box-media {
-        flex-direction: row;
-        /* Maintain horizontal layout */
+        flex-direction: column;
+        /* Stack vertically */
     }
 
     .text-box-media img {
-        width: auto;
-        /* Image stays the same size */
-        flex-shrink: 0;
-        /* Prevent shrinking of the image */
+        width: 50%;
+        /* Image spans full width */
+        height: auto;
+        border-radius: 15px 15px 0 0;
+        /* Adjust for vertical stacking */
     }
 
     .text-box-media div {
         width: 100%;
         /* Text spans full width */
         padding: 15px;
+    }
+
+    .text-box-media h3,
+    .text-box-media p {
         text-align: center;
-        /* Optional: Center-align for better readability */
+        /* Optional: Center-align for smaller screens */
     }
 
     footer {
@@ -372,7 +469,7 @@ footer h3 {
         justify-content: space-between;
     }
 
-    header nav .styled-button {
+    header nav .nav-button {
         font-size: 20px;
         /* Maintain larger button font size */
         padding: 18px 35px;
@@ -439,18 +536,18 @@ footer h3 {
     }
 
     /* Hover Effect */
-    header nav .styled-button {
+    header nav .nav-button {
         background-color: #596566;
         color: #fefaf4;
     }
 
-    header nav .styled-button:hover {
+    header nav .nav-button:hover {
         background-color: #fefaf4;
         color: #596566;
     }
 
     /* Focus Effect */
-    header nav .styled-button:focus {
+    header nav .nav-button:focus {
         background-color: #fefaf4;
         color: #596566;
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
@@ -502,18 +599,18 @@ footer h3 {
     }
 
     /* Hover Effect */
-    header nav .styled-button {
+    header nav .nav-button {
         background-color: #000000;
         color: #fefaf4;
     }
 
-    header nav .styled-button:hover {
+    header nav .nav-button:hover {
         background-color: #fefaf4;
         color: #000000;
     }
 
     /* Focus Effect */
-    header nav .styled-button:focus {
+    header nav .nav-button:focus {
         background-color: #fefaf4;
         color: #000000;
         box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
@@ -578,18 +675,18 @@ footer h3 {
         }
 
         /* Hover Effect */
-        header nav .styled-button {
+        header nav .nav-button {
             background-color: #fefaf4;
             color: #000000;
         }
 
-        header nav .styled-button:hover {
+        header nav .nav-button:hover {
             background-color: #000000;
             color: #fefaf4;
         }
 
         /* Focus Effect */
-        header nav .styled-button:focus {
+        header nav .nav-button:focus {
             background-color: #000000;
             color: #fefaf4;
             box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
