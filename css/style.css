@@ -50,6 +50,10 @@ body {
     /* Optional: Adds a subtle blur effect */
 }
 
+a {
+    color: #355e3b;
+}
+
 /* Header styles */
 header {
     text-align: center;
@@ -242,6 +246,12 @@ main {
     color: #233b27;
 }
 
+.text-box-media h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: #1d3121;
+}
+
 .text-box-media p {
     margin: 0;
     font-size: 1rem;
@@ -270,6 +280,12 @@ main {
 .text-box-media .trailer-button:hover {
     background-color: #FF5555;
 }
+
+.text-box-media iframe {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 
 
 #scrollTopBtn {
@@ -572,6 +588,10 @@ footer h3 {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
+    a {
+        color: #97a5c2;
+    }
+
     main .text-box-media {
         background-color: rgba(0, 9, 40, 0.6);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -579,7 +599,10 @@ footer h3 {
 
     .text-box-media h3 {
         color: #afbfcf;
-        ;
+    }
+
+    .text-box-media h4 {
+        color: #9baab9;
     }
 
     .text-box-media p {
@@ -633,6 +656,10 @@ footer h3 {
     .text-box {
         background-color: rgba(219, 224, 227, 0.5);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    a {
+        color: #111111;
     }
 
     main .text-box-media {
@@ -709,6 +736,10 @@ footer h3 {
         .text-box {
             background-color: rgba(0, 0, 0, 0.5);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            color: #eeeeee;
         }
 
         main .text-box-media {

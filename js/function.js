@@ -32,3 +32,20 @@ document.getElementById('lightbox').addEventListener('click', function (event) {
         closeLightbox();
     }
 });
+
+// function addSpotifyPreview(container, spotifyUrl) {
+//     const trackId = spotifyUrl.split('track/')[1]?.split('?')[0];
+//     if (trackId) {
+//         const iframe = document.createElement('iframe');
+//         iframe.src = `https://open.spotify.com/embed/track/${trackId}`;
+//         iframe.width = "300";
+//         iframe.height = "80";
+//         iframe.allow = "encrypted-media";
+//         iframe.style.borderRadius = "10px";
+//         container.appendChild(iframe);
+//     }
+// }
+
+// // Example usage
+// const textBox = document.querySelector('.text-box-media div');
+// addSpotifyPreview(textBox, 'https://open.spotify.com/track/{TRACK_ID}');
