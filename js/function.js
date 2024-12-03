@@ -14,19 +14,16 @@ function scrollToTop() {
     document.body.focus();
 }
 
-// Function to open the lightbox
 function openLightbox() {
     const lightbox = document.getElementById('lightbox');
-    lightbox.classList.add('active'); // Add the "active" class to make the lightbox visible
+    lightbox.classList.add('active');
 }
 
-// Function to close the lightbox
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active'); // Remove the "active" class to hide the lightbox
+    lightbox.classList.remove('active');
 }
 
-// Optional: Close lightbox when clicking outside the content
 document.getElementById('lightbox').addEventListener('click', function (event) {
     if (event.target === this) {
         closeLightbox();
@@ -46,6 +43,5 @@ document.getElementById('lightbox').addEventListener('click', function (event) {
 //     }
 // }
 
-// // Example usage
 // const textBox = document.querySelector('.text-box-media div');
 // addSpotifyPreview(textBox, 'https://open.spotify.com/track/{TRACK_ID}');
